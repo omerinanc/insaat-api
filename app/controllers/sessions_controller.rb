@@ -1,0 +1,50 @@
+include JwtHelper
+
+class SessionsController < ApplicationController
+  include CurrentUserConcern
+  def session_params
+    params.require(:user).permit(:username, :password)
+  end
+  def create
+    user = User.find_by(username: session_params[:username])
+    puts "User found: #{user.inspect}"
+  if user && user.authenticate(params["user"]["password"])
+    token = JwtHelper.encode({ user_id: user.id })
+puts "Generated Token: #{token}"
+
+    session[:id] = user.id 
+    render json: {
+      status: :created,
+      logged_in: true,
+      user: user,
+      token: token
+    }
+    puts "Login is successful"
+  else
+
+    logger.error("Login failed for username: #{params["user"]["username"]}")
+    render json: { logged_in: false }
+  end
+end
+
+  def logged_in
+    if @current_user
+      render json: {
+        logged_in: true,
+        user: @current_user
+      }
+    else
+      render json: {
+        logged_in: false
+      }
+    end
+  end
+
+  def logout
+    reset_session
+    render json: { 
+      status: 200, 
+      logged_out: true 
+    }
+  end
+end
