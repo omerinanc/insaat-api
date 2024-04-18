@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isim_soyisim: MyString
+  telefon_numarasi: MyString
+  anlasma_tarihi: 2023-09-26
+  anlasma_miktari: 9.99
+  on_odeme: 9.99
+  taksit_tarihi: 2023-09-26
+  taksit_miktari: 9.99
+  tapu_tarihi: 2023-09-26
+  teslim_tarihi: 2023-09-26
+
+two:
+  isim_soyisim: MyString
+  telefon_numarasi: MyString
+  anlasma_tarihi: 2023-09-26
+  anlasma_miktari: 9.99
+  on_odeme: 9.99
+  taksit_tarihi: 2023-09-26
+  taksit_miktari: 9.99
+  tapu_tarihi: 2023-09-26
+  teslim_tarihi: 2023-09-26

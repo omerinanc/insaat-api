@@ -13,6 +13,12 @@ module InsaatApi
     config.api_only = true
 
     config.load_defaults 7.0
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'https://omerinanc.online/' # Add other origins as needed
+        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

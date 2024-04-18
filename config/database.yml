@@ -30,7 +30,7 @@ development:
   adapter: postgresql
   encoding: unicode
   database: insaatapi
-  host: localhost
+  host: 3.66.27.11
   pool: 5
   username: yamasiro
   password: Omer2021!!
@@ -46,7 +46,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: insaatapi_Production
-  host: localhost
+  host: 3.66.27.11
   pool: 5
   username: yamasiro
   password: Omer2021!!

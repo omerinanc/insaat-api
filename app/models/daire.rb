@@ -1,0 +1,2 @@
+class Daire < ApplicationRecord
+end
